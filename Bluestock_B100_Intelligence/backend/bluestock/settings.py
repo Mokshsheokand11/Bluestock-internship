@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     'corsheaders',
     
     # Our app
-    'api',
+    'backend.api',
 ]
 
 MIDDLEWARE = [
