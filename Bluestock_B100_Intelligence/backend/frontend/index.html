@@ -1,203 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bluestock B100 Intelligence</title>
+    <title>Bluestock B100 Intelligence | Nifty 100</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body class="bg-gray-50">
     <!-- Navbar -->
-    <nav class="bg-white shadow-sm border-b">
+    <nav class="bg-white border-b shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                <div
+                    class="w-11 h-11 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center">
                     <i class="fa-solid fa-chart-line text-white text-2xl"></i>
                 </div>
                 <div>
-                    <span class="font-bold text-2xl text-gray-900">Bluestock</span>
-                    <span class="text-blue-600 font-semibold">B100</span>
+                    <span class="font-bold text-3xl text-gray-900">Bluestock</span>
+                    <span class="text-blue-600 font-semibold text-2xl">B100</span>
                 </div>
             </div>
-            <div class="flex items-center gap-4">
-                <span class="px-4 py-1.5 bg-green-100 text-green-700 text-sm font-medium rounded-full">Nifty 100</span>
-                <span class="text-gray-500 text-sm">Data Analytics Intern Project</span>
+            <div class="flex items-center gap-3">
+                <span
+                    class="px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full flex items-center gap-2">
+                    <i class="fa-solid fa-circle text-emerald-500"></i>
+                    Live Data
+                </span>
+                <span class="text-gray-500 text-sm">Data Analytics Intern • 2026</span>
             </div>
         </div>
     </nav>
 
     <div class="max-w-7xl mx-auto px-6 py-8">
-        
+
         <!-- Header -->
         <div class="mb-8">
-            <h1 class="text-4xl font-bold text-gray-900">Nifty 100 Financial Intelligence</h1>
-            <p class="text-gray-600 mt-2">Real-time fundamental analysis & health scoring platform</p>
+            <h1 class="text-4xl font-bold text-gray-900 tracking-tight">Nifty 100 Financial Intelligence</h1>
+            <p class="text-gray-600 mt-2 text-lg">Real-time fundamental analysis & company health scoring platform</p>
         </div>
 
-        <!-- Stats Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border">
-                <div class="flex justify-between">
+        <!-- KPI Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border">
+                <div class="flex justify-between items-start">
                     <div>
-                        <p class="text-sm text-gray-500">Total Companies</p>
-                        <p class="text-3xl font-bold text-gray-900 mt-1" id="total-companies">100</p>
+                        <p class="text-sm font-medium text-gray-500">Total Companies</p>
+                        <p class="text-4xl font-bold text-gray-900 mt-2" id="total-companies">100</p>
                     </div>
-                    <i class="fa-solid fa-building text-blue-500 text-3xl"></i>
+                    <i class="fa-solid fa-building text-blue-500 text-3xl mt-1"></i>
                 </div>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border">
-                <div class="flex justify-between">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border">
+                <div class="flex justify-between items-start">
                     <div>
-                        <p class="text-sm text-gray-500">Avg Health Score</p>
-                        <p class="text-3xl font-bold text-green-600 mt-1" id="avg-score">78.4</p>
+                        <p class="text-sm font-medium text-gray-500">Avg Health Score</p>
+                        <p class="text-4xl font-bold text-emerald-600 mt-2" id="avg-score">72.4</p>
                     </div>
-                    <i class="fa-solid fa-heart-pulse text-green-500 text-3xl"></i>
+                    <i class="fa-solid fa-heart-pulse text-emerald-500 text-3xl mt-1"></i>
                 </div>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border">
-                <div class="flex justify-between">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border">
+                <div class="flex justify-between items-start">
                     <div>
-                        <p class="text-sm text-gray-500">Excellent Companies</p>
-                        <p class="text-3xl font-bold text-emerald-600 mt-1">24</p>
+                        <p class="text-sm font-medium text-gray-500">Excellent (85+)</p>
+                        <p class="text-4xl font-bold text-green-600 mt-2" id="excellent-count">18</p>
                     </div>
-                    <i class="fa-solid fa-trophy text-emerald-500 text-3xl"></i>
+                    <i class="fa-solid fa-trophy text-green-500 text-3xl mt-1"></i>
                 </div>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border">
-                <div class="flex justify-between">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border">
+                <div class="flex justify-between items-start">
                     <div>
-                        <p class="text-sm text-gray-500">Avg ROE</p>
-                        <p class="text-3xl font-bold text-indigo-600 mt-1">19.8%</p>
+                        <p class="text-sm font-medium text-gray-500">Avg ROE</p>
+                        <p class="text-4xl font-bold text-indigo-600 mt-2" id="avg-roe">18.6%</p>
                     </div>
-                    <i class="fa-solid fa-percent text-indigo-500 text-3xl"></i>
+                    <i class="fa-solid fa-percent text-indigo-500 text-3xl mt-1"></i>
                 </div>
             </div>
         </div>
 
-        <!-- Health Leaderboard -->
-        <div class="bg-white rounded-2xl shadow-sm border p-6 mb-8">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-xl font-semibold text-gray-900">Health Score Leaderboard</h2>
-                <button onclick="loadLeaderboard()" 
-                        class="px-4 py-2 bg-blue-600 text-white text-sm rounded-xl hover:bg-blue-700 flex items-center gap-2">
+        <!-- Main Table -->
+        <div class="bg-white rounded-3xl shadow-sm border overflow-hidden">
+            <div class="px-6 py-5 border-b flex justify-between items-center bg-gray-50">
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-900">Company Health Leaderboard</h2>
+                    <p class="text-sm text-gray-500">Real data from Excel files • Sorted by Health Score</p>
+                </div>
+                <button onclick="loadCompanies()"
+                    class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 transition text-white text-sm font-semibold rounded-2xl flex items-center gap-2">
                     <i class="fa-solid fa-sync"></i>
-                    <span>Refresh</span>
+                    <span>Refresh Data</span>
                 </button>
             </div>
-            
+
             <div class="overflow-x-auto">
-                <table class="w-full">
-                    <thead>
-                        <tr class="border-b">
-                            <th class="text-left py-3 px-4 text-sm font-medium text-gray-500">Rank</th>
-                            <th class="text-left py-3 px-4 text-sm font-medium text-gray-500">Company</th>
-                            <th class="text-left py-3 px-4 text-sm font-medium text-gray-500">Sector</th>
-                            <th class="text-right py-3 px-4 text-sm font-medium text-gray-500">Health Score</th>
-                            <th class="text-right py-3 px-4 text-sm font-medium text-gray-500">ROE</th>
-                            <th class="text-right py-3 px-4 text-sm font-medium text-gray-500">D/E</th>
+                <table class="w-full text-sm">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="text-left py-4 px-6 font-semibold text-gray-600">Rank</th>
+                            <th class="text-left py-4 px-6 font-semibold text-gray-600">Company</th>
+                            <th class="text-left py-4 px-6 font-semibold text-gray-600">Sector</th>
+                            <th class="text-right py-4 px-6 font-semibold text-gray-600">Health Score</th>
+                            <th class="text-right py-4 px-6 font-semibold text-gray-600">ROE %</th>
+                            <th class="text-right py-4 px-6 font-semibold text-gray-600">OPM %</th>
+                            <th class="text-right py-4 px-6 font-semibold text-gray-600">D/E Ratio</th>
+                            <th class="text-right py-4 px-6 font-semibold text-gray-600">Rev Growth %</th>
                         </tr>
                     </thead>
-                    <tbody id="leaderboard-body" class="text-sm">
-                        <!-- Data will be loaded here by JavaScript -->
+                    <tbody id="companies-table" class="divide-y">
+                        <!-- Data loaded dynamically via JavaScript -->
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <!-- Quick Links -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a href="/api/companies/" target="_blank" 
-               class="bg-white p-6 rounded-2xl border hover:shadow-md transition flex items-center gap-4">
-                <i class="fa-solid fa-list text-2xl text-blue-600"></i>
-                <div>
-                    <div class="font-semibold">View All Companies (API)</div>
-                    <div class="text-sm text-gray-500">REST API Endpoint</div>
-                </div>
-            </a>
-            
-            <a href="/admin/" target="_blank"
-               class="bg-white p-6 rounded-2xl border hover:shadow-md transition flex items-center gap-4">
-                <i class="fa-solid fa-database text-2xl text-purple-600"></i>
-                <div>
-                    <div class="font-semibold">Admin Panel</div>
-                    <div class="text-sm text-gray-500">Manage Data</div>
-                </div>
-            </a>
-            
-            <div onclick="showDemoMessage()"
-                 class="bg-white p-6 rounded-2xl border hover:shadow-md transition flex items-center gap-4 cursor-pointer">
-                <i class="fa-solid fa-play text-2xl text-green-600"></i>
-                <div>
-                    <div class="font-semibold">Run Health Scoring</div>
-                    <div class="text-sm text-gray-500">ML Model Demo</div>
-                </div>
-            </div>
+        <div class="mt-6 text-center text-xs text-gray-400">
+            Data loaded from Excel files via ETL Pipeline • Bluestock B100 Intelligence Project
         </div>
-
     </div>
 
     <script>
-        // Tailwind Script
-        function initializeTailwind() {
-            document.documentElement.style.setProperty('--accent', '#2563eb');
-        }
+        async function loadCompanies() {
+            const tbody = document.getElementById('companies-table');
+            tbody.innerHTML = `<tr><td colspan="8" class="text-center py-12 text-gray-400">Loading real data from database...</td></tr>`;
 
-        // Load Leaderboard from API
-        async function loadLeaderboard() {
-            const tbody = document.getElementById('leaderboard-body');
-            tbody.innerHTML = '<tr><td colspan="6" class="text-center py-8 text-gray-400">Loading data...</td></tr>';
-            
             try {
-                const response = await fetch('/api/health-leaderboard/');
-                const data = await response.json();
-                
+                const response = await fetch('/api/companies/');
+                const companies = await response.json();
+
+                // Sort by health_score descending
+                companies.sort((a, b) => b.health_score - a.health_score);
+
                 tbody.innerHTML = '';
-                
-                data.forEach((company, index) => {
+
+                companies.forEach((company, index) => {
                     const row = document.createElement('tr');
-                    row.className = 'border-b hover:bg-gray-50';
+                    row.className = 'hover:bg-gray-50 transition';
+
+                    const scoreColor = company.health_score >= 80 ? 'text-emerald-600 font-bold' :
+                        company.health_score >= 60 ? 'text-yellow-600 font-semibold' : 'text-orange-600';
+
                     row.innerHTML = `
-                        <td class="py-3 px-4 font-medium">${index + 1}</td>
-                        <td class="py-3 px-4">
-                            <div class="font-semibold">${company.company_name}</div>
-                            <div class="text-xs text-gray-500">${company.symbol}</div>
+                        <td class="py-4 px-6 font-medium text-gray-500">${index + 1}</td>
+                        <td class="py-4 px-6">
+                            <div class="font-semibold text-gray-900">${company.company_name}</div>
+                            <div class="text-xs text-gray-500 font-mono">${company.symbol}</div>
                         </td>
-                        <td class="py-3 px-4">
-                            <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">${company.sector}</span>
+                        <td class="py-4 px-6">
+                            <span class="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-700">${company.sector}</span>
                         </td>
-                        <td class="py-3 px-4 text-right">
-                            <span class="font-bold text-lg ${company.health_score >= 80 ? 'text-green-600' : 'text-yellow-600'}">
-                                ${company.health_score}
-                            </span>
+                        <td class="py-4 px-6 text-right">
+                            <span class="${scoreColor} text-lg">${company.health_score}</span>
                         </td>
-                        <td class="py-3 px-4 text-right font-medium">${company.roe}%</td>
-                        <td class="py-3 px-4 text-right font-medium">${company.debt_to_equity}</td>
+                        <td class="py-4 px-6 text-right font-medium">${company.roe}</td>
+                        <td class="py-4 px-6 text-right font-medium">${company.opm}</td>
+                        <td class="py-4 px-6 text-right font-medium">${company.debt_to_equity}</td>
+                        <td class="py-4 px-6 text-right font-medium text-emerald-600">+${company.revenue_growth}</td>
                     `;
                     tbody.appendChild(row);
                 });
+
+                // Update KPI cards
+                document.getElementById('total-companies').innerText = companies.length;
+
+                const avgScore = (companies.reduce((sum, c) => sum + c.health_score, 0) / companies.length).toFixed(1);
+                document.getElementById('avg-score').innerText = avgScore;
+
+                const excellent = companies.filter(c => c.health_score >= 85).length;
+                document.getElementById('excellent-count').innerText = excellent;
+
+                const avgRoe = (companies.reduce((sum, c) => sum + c.roe, 0) / companies.length).toFixed(1);
+                document.getElementById('avg-roe').innerText = avgRoe + '%';
+
             } catch (error) {
-                tbody.innerHTML = '<tr><td colspan="6" class="text-center py-8 text-red-400">Failed to load data. Please check if server is running.</td></tr>';
+                tbody.innerHTML = `<tr><td colspan="8" class="text-center py-12 text-red-400">Failed to load data. Make sure Django server is running.</td></tr>`;
             }
         }
 
-        function showDemoMessage() {
-            alert("Health Scoring ML Model\n\nThis would run the 6-dimension health scoring algorithm (Profitability, Growth, Leverage, Cash Flow, Dividend, Trend).\n\nIn full version: Celery task runs daily at 2 AM.");
+        // Auto load when page opens
+        window.onload = function () {
+            loadCompanies();
         }
-
-        // Initialize everything
-        function init() {
-            initializeTailwind();
-            loadLeaderboard();
-            
-            // Auto refresh every 30 seconds
-            setInterval(() => {
-                console.log('%c[Bluestock] Auto-refreshing leaderboard...', 'color:#64748b');
-            }, 30000);
-        }
-
-        window.onload = init;
     </script>
 </body>
+
 </html>
