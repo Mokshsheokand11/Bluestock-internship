@@ -1,8 +1,8 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-path('api/', include('backend.api.urls')),
-    path('', include('api.urls')),   # This makes frontend load at root
+    path('', views.company_list, name='home'),
+    path('companies/', views.company_list, name='company_list'),
+    path('companies/<str:symbol>/', views.company_detail, name='company_detail'),
 ]
