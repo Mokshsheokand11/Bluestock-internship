@@ -35,7 +35,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'bluestock.urls'
+ROOT_URLCONF = 'backend.bluestock.urls'
 
 TEMPLATES = [
     {
