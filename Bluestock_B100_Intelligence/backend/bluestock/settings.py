@@ -53,7 +53,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'bluestock.wsgi.application'
+WSGI_APPLICATION = 'backend.bluestock.wsgi.application'
 
 DATABASES = {
     'default': {
