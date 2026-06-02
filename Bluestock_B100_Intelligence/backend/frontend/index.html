@@ -4,186 +4,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bluestock B100 Intelligence | Nifty 100</title>
+    <title>Bluestock B100 • Nifty 100 Intelligence</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
-<body class="bg-gray-50">
-    <!-- Navbar -->
-    <nav class="bg-white border-b shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
+<body class="bg-slate-50">
+    <!-- Top Navigation -->
+    <nav class="bg-white border-b">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-4">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-10 h-10 bg-slate-900 rounded-2xl flex items-center justify-center">
+                        <i class="fa-solid fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-semibold text-3xl tracking-tighter">bluestock</span>
+                        <span class="font-bold text-3xl text-blue-600">B100</span>
+                    </div>
+                </div>
                 <div
-                    class="w-11 h-11 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center">
-                    <i class="fa-solid fa-chart-line text-white text-2xl"></i>
-                </div>
-                <div>
-                    <span class="font-bold text-3xl text-gray-900">Bluestock</span>
-                    <span class="text-blue-600 font-semibold text-2xl">B100</span>
-                </div>
+                    class="ml-4 px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold tracking-widest rounded-full">
+                    NIFTY 100</div>
             </div>
-            <div class="flex items-center gap-3">
-                <span
-                    class="px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full flex items-center gap-2">
-                    <i class="fa-solid fa-circle text-emerald-500"></i>
-                    Live Data
-                </span>
-                <span class="text-gray-500 text-sm">Data Analytics Intern • 2026</span>
+
+            <div class="flex items-center gap-x-3 text-sm">
+                <div class="px-4 py-2 bg-white border rounded-2xl text-sm flex items-center gap-x-2">
+                    <i class="fa-solid fa-user text-gray-400"></i>
+                    <span class="font-medium text-gray-700">Moksh • Data Analytics Intern</span>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="max-w-7xl mx-auto px-6 py-8">
+    <div class="max-w-screen-2xl mx-auto px-8 py-10">
 
         <!-- Header -->
-        <div class="mb-8">
-            <h1 class="text-4xl font-bold text-gray-900 tracking-tight">Nifty 100 Financial Intelligence</h1>
-            <p class="text-gray-600 mt-2 text-lg">Real-time fundamental analysis & company health scoring platform</p>
+        <div class="flex justify-between items-end mb-8">
+            <div>
+                <h1 class="text-5xl font-semibold tracking-tighter text-slate-900">Nifty 100 Intelligence</h1>
+                <p class="text-xl text-slate-600 mt-2">Fundamental Analysis & Health Scoring Platform</p>
+            </div>
+            <div class="text-right">
+                <div class="text-emerald-600 text-sm font-semibold flex items-center justify-end gap-x-2">
+                    <i class="fa-solid fa-circle"></i>
+                    <span>LIVE FROM EXCEL DATA</span>
+                </div>
+                <div class="text-xs text-slate-500 mt-1">Last updated: Just now</div>
+            </div>
         </div>
 
-        <!-- KPI Cards -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-            <div class="bg-white p-6 rounded-3xl shadow-sm border">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <p class="text-sm font-medium text-gray-500">Total Companies</p>
-                        <p class="text-4xl font-bold text-gray-900 mt-2" id="total-companies">100</p>
-                    </div>
-                    <i class="fa-solid fa-building text-blue-500 text-3xl mt-1"></i>
+        <!-- KPI Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white border rounded-3xl p-6">
+                <div class="text-sm text-slate-500">Total Companies</div>
+                <div class="text-5xl font-semibold text-slate-900 mt-3" id="kpi-total">100</div>
+            </div>
+            <div class="bg-white border rounded-3xl p-6">
+                <div class="text-sm text-slate-500">Average Health Score</div>
+                <div class="text-5xl font-semibold text-emerald-600 mt-3" id="kpi-score">71.8</div>
+            </div>
+            <div class="bg-white border rounded-3xl p-6">
+                <div class="text-sm text-slate-500">Excellent Companies (85+)</div>
+                <div class="text-5xl font-semibold text-green-600 mt-3" id="kpi-excellent">19</div>
+            </div>
+            <div class="bg-white border rounded-3xl p-6">
+                <div class="text-sm text-slate-500">Average ROE</div>
+                <div class="text-5xl font-semibold text-indigo-600 mt-3" id="kpi-roe">17.4%</div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white border rounded-3xl p-5 mb-4 flex flex-wrap gap-4 items-center">
+            <div class="flex-1 min-w-[280px]">
+                <div class="relative">
+                    <i class="fa-solid fa-search absolute left-4 top-3.5 text-slate-400"></i>
+                    <input type="text" id="search-input" placeholder="Search company name or symbol..."
+                        class="w-full pl-11 pr-4 py-3 border rounded-2xl text-sm focus:outline-none focus:border-blue-400">
                 </div>
             </div>
-            <div class="bg-white p-6 rounded-3xl shadow-sm border">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <p class="text-sm font-medium text-gray-500">Avg Health Score</p>
-                        <p class="text-4xl font-bold text-emerald-600 mt-2" id="avg-score">72.4</p>
-                    </div>
-                    <i class="fa-solid fa-heart-pulse text-emerald-500 text-3xl mt-1"></i>
-                </div>
-            </div>
-            <div class="bg-white p-6 rounded-3xl shadow-sm border">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <p class="text-sm font-medium text-gray-500">Excellent (85+)</p>
-                        <p class="text-4xl font-bold text-green-600 mt-2" id="excellent-count">18</p>
-                    </div>
-                    <i class="fa-solid fa-trophy text-green-500 text-3xl mt-1"></i>
-                </div>
-            </div>
-            <div class="bg-white p-6 rounded-3xl shadow-sm border">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <p class="text-sm font-medium text-gray-500">Avg ROE</p>
-                        <p class="text-4xl font-bold text-indigo-600 mt-2" id="avg-roe">18.6%</p>
-                    </div>
-                    <i class="fa-solid fa-percent text-indigo-500 text-3xl mt-1"></i>
-                </div>
-            </div>
+
+            <select id="sector-filter" class="border rounded-2xl px-4 py-3 text-sm min-w-[180px]">
+                <option value="">All Sectors</option>
+            </select>
+
+            <button onclick="filterTable()"
+                class="px-6 py-3 bg-slate-900 text-white rounded-2xl text-sm font-semibold flex items-center gap-x-2 hover:bg-black transition">
+                <i class="fa-solid fa-filter"></i>
+                <span>Apply Filters</span>
+            </button>
         </div>
 
         <!-- Main Table -->
-        <div class="bg-white rounded-3xl shadow-sm border overflow-hidden">
-            <div class="px-6 py-5 border-b flex justify-between items-center bg-gray-50">
-                <div>
-                    <h2 class="text-xl font-semibold text-gray-900">Company Health Leaderboard</h2>
-                    <p class="text-sm text-gray-500">Real data from Excel files • Sorted by Health Score</p>
-                </div>
-                <button onclick="loadCompanies()"
-                    class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 transition text-white text-sm font-semibold rounded-2xl flex items-center gap-2">
-                    <i class="fa-solid fa-sync"></i>
-                    <span>Refresh Data</span>
-                </button>
-            </div>
-
-            <div class="overflow-x-auto">
-                <table class="w-full text-sm">
-                    <thead class="bg-gray-100">
-                        <tr>
-                            <th class="text-left py-4 px-6 font-semibold text-gray-600">Rank</th>
-                            <th class="text-left py-4 px-6 font-semibold text-gray-600">Company</th>
-                            <th class="text-left py-4 px-6 font-semibold text-gray-600">Sector</th>
-                            <th class="text-right py-4 px-6 font-semibold text-gray-600">Health Score</th>
-                            <th class="text-right py-4 px-6 font-semibold text-gray-600">ROE %</th>
-                            <th class="text-right py-4 px-6 font-semibold text-gray-600">OPM %</th>
-                            <th class="text-right py-4 px-6 font-semibold text-gray-600">D/E Ratio</th>
-                            <th class="text-right py-4 px-6 font-semibold text-gray-600">Rev Growth %</th>
-                        </tr>
-                    </thead>
-                    <tbody id="companies-table" class="divide-y">
-                        <!-- Data loaded dynamically via JavaScript -->
-                    </tbody>
-                </table>
-            </div>
+        <div class="bg-white border rounded-3xl overflow-hidden shadow-sm">
+            <table class="w-full text-sm">
+                <thead class="bg-slate-100 text-slate-600">
+                    <tr>
+                        <th class="text-left py-4 px-6 font-semibold w-12">Rank</th>
+                        <th class="text-left py-4 px-6 font-semibold">Company</th>
+                        <th class="text-left py-4 px-6 font-semibold">Sector</th>
+                        <th class="text-right py-4 px-6 font-semibold">Health Score</th>
+                        <th class="text-right py-4 px-6 font-semibold">ROE</th>
+                        <th class="text-right py-4 px-6 font-semibold">OPM</th>
+                        <th class="text-right py-4 px-6 font-semibold">D/E</th>
+                        <th class="text-right py-4 px-6 font-semibold">Rev Growth</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body" class="divide-y text-slate-700">
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
         </div>
 
-        <div class="mt-6 text-center text-xs text-gray-400">
-            Data loaded from Excel files via ETL Pipeline • Bluestock B100 Intelligence Project
+        <div class="text-center text-xs text-slate-400 mt-6">
+            Data loaded from real Excel files via ETL Pipeline • Bluestock B100 Project by Moksh
         </div>
     </div>
 
     <script>
-        async function loadCompanies() {
-            const tbody = document.getElementById('companies-table');
-            tbody.innerHTML = `<tr><td colspan="8" class="text-center py-12 text-gray-400">Loading real data from database...</td></tr>`;
+        let allCompanies = [];
+
+        async function loadData() {
+            const tbody = document.getElementById('table-body');
+            tbody.innerHTML = `<tr><td colspan="8" class="text-center py-16 text-slate-400">Loading real Nifty 100 data...</td></tr>`;
 
             try {
-                const response = await fetch('/api/companies/');
-                const companies = await response.json();
+                const res = await fetch('/api/companies/');
+                allCompanies = await res.json();
 
-                // Sort by health_score descending
-                companies.sort((a, b) => b.health_score - a.health_score);
+                // Sort by health score
+                allCompanies.sort((a, b) => b.health_score - a.health_score);
 
-                tbody.innerHTML = '';
+                renderTable(allCompanies);
+                updateKPIs(allCompanies);
+                populateSectorFilter(allCompanies);
 
-                companies.forEach((company, index) => {
-                    const row = document.createElement('tr');
-                    row.className = 'hover:bg-gray-50 transition';
-
-                    const scoreColor = company.health_score >= 80 ? 'text-emerald-600 font-bold' :
-                        company.health_score >= 60 ? 'text-yellow-600 font-semibold' : 'text-orange-600';
-
-                    row.innerHTML = `
-                        <td class="py-4 px-6 font-medium text-gray-500">${index + 1}</td>
-                        <td class="py-4 px-6">
-                            <div class="font-semibold text-gray-900">${company.company_name}</div>
-                            <div class="text-xs text-gray-500 font-mono">${company.symbol}</div>
-                        </td>
-                        <td class="py-4 px-6">
-                            <span class="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-700">${company.sector}</span>
-                        </td>
-                        <td class="py-4 px-6 text-right">
-                            <span class="${scoreColor} text-lg">${company.health_score}</span>
-                        </td>
-                        <td class="py-4 px-6 text-right font-medium">${company.roe}</td>
-                        <td class="py-4 px-6 text-right font-medium">${company.opm}</td>
-                        <td class="py-4 px-6 text-right font-medium">${company.debt_to_equity}</td>
-                        <td class="py-4 px-6 text-right font-medium text-emerald-600">+${company.revenue_growth}</td>
-                    `;
-                    tbody.appendChild(row);
-                });
-
-                // Update KPI cards
-                document.getElementById('total-companies').innerText = companies.length;
-
-                const avgScore = (companies.reduce((sum, c) => sum + c.health_score, 0) / companies.length).toFixed(1);
-                document.getElementById('avg-score').innerText = avgScore;
-
-                const excellent = companies.filter(c => c.health_score >= 85).length;
-                document.getElementById('excellent-count').innerText = excellent;
-
-                const avgRoe = (companies.reduce((sum, c) => sum + c.roe, 0) / companies.length).toFixed(1);
-                document.getElementById('avg-roe').innerText = avgRoe + '%';
-
-            } catch (error) {
-                tbody.innerHTML = `<tr><td colspan="8" class="text-center py-12 text-red-400">Failed to load data. Make sure Django server is running.</td></tr>`;
+            } catch (e) {
+                tbody.innerHTML = `<tr><td colspan="8" class="text-center py-16 text-red-400">Failed to load data</td></tr>`;
             }
         }
 
-        // Auto load when page opens
-        window.onload = function () {
-            loadCompanies();
+        function renderTable(companies) {
+            const tbody = document.getElementById('table-body');
+            tbody.innerHTML = '';
+
+            companies.forEach((c, i) => {
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-slate-50';
+
+                const scoreClass = c.health_score >= 80 ? 'bg-emerald-100 text-emerald-700' :
+                    c.health_score >= 60 ? 'bg-yellow-100 text-yellow-700' : 'bg-orange-100 text-orange-700';
+
+                row.innerHTML = `
+                    <td class="py-4 px-6 font-medium text-slate-500">${i + 1}</td>
+                    <td class="py-4 px-6">
+                        <div class="font-semibold">${c.company_name}</div>
+                        <div class="text-xs text-slate-500 font-mono">${c.symbol}</div>
+                    </td>
+                    <td class="py-4 px-6"><span class="px-3 py-1 text-xs rounded-full bg-slate-200">${c.sector}</span></td>
+                    <td class="py-4 px-6 text-right">
+                        <span class="px-4 py-1 rounded-2xl text-sm font-bold ${scoreClass}">${c.health_score}</span>
+                    </td>
+                    <td class="py-4 px-6 text-right font-medium">${c.roe}</td>
+                    <td class="py-4 px-6 text-right font-medium">${c.opm}</td>
+                    <td class="py-4 px-6 text-right font-medium">${c.debt_to_equity}</td>
+                    <td class="py-4 px-6 text-right font-medium text-emerald-600">+${c.revenue_growth}</td>
+                `;
+                tbody.appendChild(row);
+            });
         }
+
+        function updateKPIs(companies) {
+            document.getElementById('kpi-total').innerText = companies.length;
+
+            const avgScore = (companies.reduce((a, b) => a + b.health_score, 0) / companies.length).toFixed(1);
+            document.getElementById('kpi-score').innerText = avgScore;
+
+            const excellent = companies.filter(c => c.health_score >= 85).length;
+            document.getElementById('kpi-excellent').innerText = excellent;
+
+            const avgRoe = (companies.reduce((a, b) => a + b.roe, 0) / companies.length).toFixed(1);
+            document.getElementById('kpi-roe').innerText = avgRoe + '%';
+        }
+
+        function populateSectorFilter(companies) {
+            const select = document.getElementById('sector-filter');
+            const sectors = [...new Set(companies.map(c => c.sector))].sort();
+
+            sectors.forEach(sector => {
+                const opt = document.createElement('option');
+                opt.value = sector;
+                opt.textContent = sector;
+                select.appendChild(opt);
+            });
+        }
+
+        function filterTable() {
+            const search = document.getElementById('search-input').value.toLowerCase();
+            const sector = document.getElementById('sector-filter').value;
+
+            let filtered = allCompanies;
+
+            if (search) {
+                filtered = filtered.filter(c =>
+                    c.company_name.toLowerCase().includes(search) ||
+                    c.symbol.toLowerCase().includes(search)
+                );
+            }
+
+            if (sector) {
+                filtered = filtered.filter(c => c.sector === sector);
+            }
+
+            renderTable(filtered);
+        }
+
+        // Live search
+        document.getElementById('search-input').addEventListener('input', filterTable);
+
+        window.onload = loadData;
     </script>
 </body>
 
