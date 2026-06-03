@@ -13,6 +13,19 @@ class Company(models.Model):
     def __str__(self):
         return f"{self.symbol} - {self.company_name}"
 
+    @property
+    def health_label(self):
+        if self.health_score >= 85:
+            return 'EXCELLENT'
+        elif self.health_score >= 70:
+            return 'GOOD'
+        elif self.health_score >= 50:
+            return 'AVERAGE'
+        elif self.health_score >= 35:
+            return 'WEAK'
+        else:
+            return 'POOR'
+
 
 class FinancialData(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='financials')

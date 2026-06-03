@@ -163,7 +163,17 @@
                     </td>
                     <td class="py-4 px-6"><span class="px-3 py-1 text-xs rounded-full bg-slate-200">${c.sector}</span></td>
                     <td class="py-4 px-6 text-right">
-                        <span class="px-4 py-1 rounded-2xl text-sm font-bold ${scoreClass}">${c.health_score}</span>
+                        <div class="flex flex-col items-end">
+                            <span class="px-4 py-1 rounded-2xl text-sm font-bold ${scoreClass}">${c.health_score}</span>
+                            <span class="mt-1 px-3 py-0.5 text-[10px] font-semibold rounded-full 
+                                ${c.health_label === 'EXCELLENT' ? 'bg-emerald-100 text-emerald-700' : 
+                                  c.health_label === 'GOOD' ? 'bg-green-100 text-green-700' : 
+                                  c.health_label === 'AVERAGE' ? 'bg-yellow-100 text-yellow-700' : 
+                                  c.health_label === 'WEAK' ? 'bg-orange-100 text-orange-700' : 
+                                  'bg-red-100 text-red-700'}">
+                                ${c.health_label}
+                            </span>
+                        </div>
                     </td>
                     <td class="py-4 px-6 text-right font-medium">${c.roe}</td>
                     <td class="py-4 px-6 text-right font-medium">${c.opm}</td>

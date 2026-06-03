@@ -12,10 +12,11 @@ def company_list(request):
             'company_name': c.company_name,
             'sector': c.sector,
             'health_score': c.health_score,
-            'roe': c.roe,
-            'opm': c.opm,
-            'debt_to_equity': c.debt_to_equity,
-            'revenue_growth': c.revenue_growth,
+            'health_label': c.health_label,
+            'roe': round(c.roe, 2) if c.roe else 0,
+            'opm': round(c.opm, 2) if c.opm else 0,
+            'debt_to_equity': round(c.debt_to_equity, 2) if c.debt_to_equity else 0,
+            'revenue_growth': round(c.revenue_growth, 2) if c.revenue_growth else 0,
         })
     return Response(data)
 
@@ -28,10 +29,11 @@ def company_detail(request, symbol):
             'company_name': c.company_name,
             'sector': c.sector,
             'health_score': c.health_score,
-            'roe': c.roe,
-            'opm': c.opm,
-            'debt_to_equity': c.debt_to_equity,
-            'revenue_growth': c.revenue_growth,
+            'health_label': c.health_label,
+            'roe': round(c.roe, 2) if c.roe else 0,
+            'opm': round(c.opm, 2) if c.opm else 0,
+            'debt_to_equity': round(c.debt_to_equity, 2) if c.debt_to_equity else 0,
+            'revenue_growth': round(c.revenue_growth, 2) if c.revenue_growth else 0,
         })
     except Company.DoesNotExist:
         return Response({"error": "Company not found"}, status=404)
